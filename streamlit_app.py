@@ -171,15 +171,17 @@ with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
     num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
 
-    manual_trigger = st.slider("Number away to trigger", 1, 5000, 2000)
+    # manual_trigger = st.slider("Number away to trigger", 1, 5000, 2000)
 
     Point = namedtuple('Point', 'x y')
     data = []
 
     points_per_turn = total_points / num_turns
 
-    if manual_trigger > 3000:
-        my_cron_job()
+    # if manual_trigger > 3000:
+    #     my_cron_job()
+
+    my_cron_job()
 
     for curr_point_num in range(total_points):
         curr_turn, i = divmod(curr_point_num, points_per_turn)
